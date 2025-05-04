@@ -1,4 +1,4 @@
-import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
+import 'https://cdn.jsdelivr.net/npm/@chatscope/chat-ui-kit-react@2.0.3/dist/styles.min.css';
 import {
   MainContainer,
   ChatContainer,
