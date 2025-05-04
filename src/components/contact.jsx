@@ -134,7 +134,7 @@ export default function Contact() {
   };
      
   return (
-    <div className="w-screen h-screen flex bg-gradient-to-br from-gray-900 to-gray-800 text-white overflow-x-hidden">
+    <div className="w-screen h-screen flex bg-gradient-to-br from-gray-900 to-gray-800 text-white overflow-x-hidden overflow-y-auto">
       {/* Left Image Section */}
       <img 
   src={contactImage} 
@@ -158,9 +158,10 @@ export default function Contact() {
           <Navbar />
         </div>
 
-        <h1 className="text-6xl font-extrabold mb-15 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 drop-shadow-xl text-center w-full tracking-wide uppercase leading-snug">
-          Contact & Awareness
-        </h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 drop-shadow-xl text-center w-full tracking-wide uppercase leading-snug">
+  Contact & Awareness
+</h1>
+
 
         {/* When to Visit a Hospital */}
         <section id="visit-hospital" className="max-w-3xl text-left">
@@ -255,7 +256,6 @@ export default function Contact() {
   </p>
   <HospitalMap />
 </section>
-
 
         {/* Emergency Helplines */}
 <section id="helplines-section" className="mt-10">

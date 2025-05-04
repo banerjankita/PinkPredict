@@ -1,4 +1,3 @@
-/* Animation */
 @keyframes glowAnimation {
   0%, 100% {
     box-shadow: 0 0 5px #f7dbe9, 0 0 10px #ff66b2, 0 0 20px #ff3399;
@@ -8,7 +7,12 @@
   }
 }
 
-/* Main layout container */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
 .back {
   display: flex;
   flex-direction: column;
@@ -27,16 +31,14 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Chat Wrapper */
 .chat-wrapper {
-  width: 100%;
-  max-width: 800px;
-  height: 80vh;
   display: flex;
   flex-direction: column;
+  height: 80vh;
+  max-width: 800px;
+  width: 100%;
   border-radius: 20px;
   overflow: hidden;
   background: linear-gradient(135deg, #fff0f5, #ffffff);
@@ -44,13 +46,15 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 
-/* Pink Scrollbar for Chat Container */
+
 .chat-container {
+  flex: 1;
   overflow-y: auto;
-  -ms-overflow-style: none;
+  padding: 20px;
   scrollbar-width: thin;
   scrollbar-color: #ff66b2 #ffe6f0;
 }
+
 
 .chat-container::-webkit-scrollbar {
   width: 8px;
@@ -69,86 +73,89 @@
   background: #ff3399;
 }
 
-/* Message Styling */
-.cs-message--incoming .cs-message__content {
-  background-color: #ffe0f0 !important;
-  color: #b30059 !important;
-  border-radius: 14px;
-  padding: 10px 14px;
-  font-family: 'Segoe UI', sans-serif;
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.cs-message--outgoing .cs-message__content {
-  background-color: #fcd4e4 !important;
-  color: #800040 !important;
-  border-radius: 14px;
-  padding: 10px 14px;
-  font-family: 'Segoe UI', sans-serif;
+.message-bubble {
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 1rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-.cs-message--incoming .cs-message__content:hover,
-.cs-message--outgoing .cs-message__content:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
+.message-bubble.user {
+  align-self: flex-end;
+  background-color: #ffb3d9;
+  color: #4a0033;
 }
 
-/* Input Area Styling */
-.cs-message-input {
-  background-color: #fff0f5 !important;
-  padding: 10px 15px;
+.message-bubble.bot {
+  align-self: flex-start;
+  background-color: #ffe0f0;
+  color: #800040;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.input-section {
+  display: flex;
+  padding: 16px;
+  background-color: #fff0f5;
   border-top: 1px solid #f8c6da;
-  display: flex;
-  align-items: center;
   gap: 10px;
-}
-
-/* Customize the message input box */
-.cs-message-input__content-editor {
-  color: black; /* Text color inside the input box */
-  background-color: white; /* Input background */
-  border-radius: 8px;
-  padding: 8px 12px;
-  outline: none;
-  border: 2px solid transparent;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-/* On focus: change border from blue to pink */
-.cs-message-input__content-editor:focus {
-  box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.4) !important;
-}
-
-/* Send Button/Icon Styling */
-.cs-message-input__content-button {
-  background-color: #ff66b2 !important;
-  color: white !important;
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  height: 42px;
-  width: 42px;
 }
 
-.cs-message-input__content-button:hover {
-  background-color: #ff3385 !important;
-  transform: scale(1.1);
+.input-box {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 2px solid #ff66b2;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
 }
 
-.cs-message-input__content-button svg {
-  fill: white;
-  width: 20px;
-  height: 20px;
+.input-box:focus {
+  border-color: #ff3399;
+  box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
 }
 
-/* Go Home Button */
+.send-button {
+  background-color: #ff66b2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.send-button:hover {
+  background-color: #ff3399;
+  transform: scale(1.05);
+}
+
 .go-home-button {
   margin-top: 20px;
-  padding: 20px 20px;
+  padding: 12px 24px;
   background-color: #ff66b2;
   color: white;
   border: none;
@@ -156,7 +163,7 @@
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s, transform 0.2s;
   box-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
 }
 
@@ -165,45 +172,24 @@
   transform: scale(1.05);
 }
 
-/* Global Reset */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-/* Responsive Tweaks */
 @media (max-width: 600px) {
   .back h2 {
     font-size: 2rem;
   }
 
   .chat-wrapper {
-    height: 80vh;
+    height: 75vh;
+  }
+
+  .input-box {
+    font-size: 0.9rem;
+  }
+
+  .send-button {
+    padding: 8px 14px;
   }
 }
-/* Make both attachment and send icons pink */
-.cs-button.cs-button--attachment,
-.cs-button.cs-button--send {
-  color: hotpink !important;  /* You can use #ff69b4 or any shade */
-}
-.ps__thumb-y {
-  background-color: pink !important;
-}
-.cs-message-input__content-editor-wrapper {
-  background-color: #fff0f5 !important;
-}
-/*.cs-message-input__content-editor-container {
-  border: lightpink;
-}
 
-.cs-message-input__content-editor {
-  background-color: lightpink;
-}*/
 
 
 

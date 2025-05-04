@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.3.0",
-    "@chatscope/chat-ui-kit-react": "^2.0.3",
     "@google/generative-ai": "^0.24.1",
     "@tailwindcss/vite": "^4.0.15",
     "axios": "^1.8.4",
