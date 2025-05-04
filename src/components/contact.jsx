@@ -99,7 +99,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:8000/feedback", {
+      const response = await axios.post("https://pinkpredict-api.onrender.com/feedback", {
         name: isAuthenticated ? user.name : name,
         email: isAuthenticated ? user.email : email,
         message: message,
