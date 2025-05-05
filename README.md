@@ -13,7 +13,7 @@
 - 🧾 **Breast Cancer Awareness Quiz** – Learn important facts through interactive questions  
 - 🗺️ **Nearby Hospital Map** – Find nearby cancer hospitals using **Leaflet.js**  
 - 🔐 **Auth0 Login System** – Secure user authentication  
-- 🎨 **Dark-themed, responsive design** – Fully styled using plain CSS (no Tailwind)  
+- 🎨 **Dark-themed, responsive design** – Fully styled using Tailwind CSS
 
 ---
 
